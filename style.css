@@ -26,7 +26,7 @@
 
   /* TEXT */
 
-  --subtitle-size:18px;
+  --subtitle-size:22px;
 
   --subtitle-weight:400;
 
@@ -42,7 +42,9 @@
 
   /* TIMING */
 
-  --loop-duration:6s;
+  --logo-visible-time:2.8s;
+
+  --fade-duration:0.8s;
 
 
 
@@ -151,8 +153,11 @@ body{
   -webkit-user-drag:none;
 
   animation:
-    logoFade var(--loop-duration)
-    ease-in-out infinite;
+    logoFade var(--fade-duration)
+    ease forwards;
+
+  animation-delay:
+    var(--logo-visible-time);
 }
 
 
@@ -176,8 +181,14 @@ body{
   opacity:0;
 
   animation:
-    textFade var(--loop-duration)
-    ease-in-out infinite;
+    textFade var(--fade-duration)
+    ease forwards;
+
+  animation-delay:
+    calc(
+      var(--logo-visible-time)
+      + var(--fade-duration)
+    );
 }
 
 
@@ -188,16 +199,12 @@ body{
 
 @keyframes logoFade{
 
-  0%,40%{
+  from{
     opacity:1;
   }
 
-  50%,90%{
+  to{
     opacity:0;
-  }
-
-  100%{
-    opacity:1;
   }
 }
 
@@ -205,15 +212,11 @@ body{
 
 @keyframes textFade{
 
-  0%,40%{
+  from{
     opacity:0;
   }
 
-  50%,90%{
+  to{
     opacity:1;
-  }
-
-  100%{
-    opacity:0;
   }
 }
