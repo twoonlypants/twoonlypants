@@ -38,16 +38,6 @@
 
 
 
-  /* TIMING */
-
-  --intro-fade:3s;
-
-  --logo-visible-time:6s;
-
-  --fade-duration:9s;
-
-
-
   /* BLUR */
 
   --background-blur:0px;
@@ -153,7 +143,7 @@ body{
   opacity:0;
 
   animation:
-    logoSequence 4.8s ease forwards;
+    logoSequence 6.5s ease forwards;
 }
 
 
@@ -179,7 +169,7 @@ body{
   animation:
     textFade 0.8s ease forwards;
 
-  animation-delay:4s;
+  animation-delay:5.5s;
 }
 
 
@@ -194,7 +184,7 @@ body{
     opacity:0;
   }
 
-  25%{
+  30%{
     opacity:1;
   }
 
