@@ -1,0 +1,177 @@
+/* =========================
+   CUSTOMIZATION
+========================= */
+
+:root{
+
+  /* COLORS */
+
+  --background-color:#0e2d45;
+
+  --logo-color:#8695a7;
+
+  --text-color:#8695a7;
+
+
+
+  /* LOGO */
+
+  --logo-width:340px;
+
+  --logo-max-width:80vw;
+
+  --logo-opacity:1;
+
+
+
+  /* TEXT */
+
+  --subtitle-size:18px;
+
+  --subtitle-weight:400;
+
+  --subtitle-spacing:0.5px;
+
+  --subtitle-margin-top:24px;
+
+
+
+  /* POSITION */
+
+  --content-offset-y:-10px;
+
+
+
+  /* ANIMATION */
+
+  --animation-duration:1.8s;
+
+  --animation-distance:10px;
+
+
+
+  /* BLUR */
+
+  --background-blur:0px;
+}
+
+
+
+/* =========================
+   RESET
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+
+
+/* =========================
+   BODY
+========================= */
+
+body{
+
+  width:100%;
+  height:100vh;
+
+  overflow:hidden;
+
+  background:var(--background-color);
+
+  font-family:
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+  text-align:center;
+
+  transform:
+    translateY(var(--content-offset-y));
+
+  animation:
+    fadeUp var(--animation-duration)
+    ease forwards;
+
+  filter:
+    blur(var(--background-blur));
+}
+
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+
+  width:var(--logo-width);
+
+  max-width:var(--logo-max-width);
+
+  opacity:var(--logo-opacity);
+
+  user-select:none;
+
+  -webkit-user-drag:none;
+}
+
+
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.subtitle{
+
+  color:var(--text-color);
+
+  margin-top:var(--subtitle-margin-top);
+
+  font-size:var(--subtitle-size);
+
+  font-weight:var(--subtitle-weight);
+
+  letter-spacing:var(--subtitle-spacing);
+
+  opacity:0.9;
+}
+
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeUp{
+
+  from{
+    opacity:0;
+
+    transform:
+      translateY(var(--animation-distance));
+  }
+
+  to{
+    opacity:1;
+
+    transform:
+      translateY(0);
+  }
+}
