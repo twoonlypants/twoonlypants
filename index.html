@@ -1,70 +1,221 @@
-<!DOCTYPE html>
+/* =========================
+   CUSTOMIZATION
+========================= */
 
-<html lang="en">
+:root{
 
-<head>
+  /* COLORS */
 
-  <!-- BASIC -->
+  --background-color:#0e2d45;
 
-  <meta charset="UTF-8" />
+  --logo-color:#8695a7;
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+  --text-color:#8695a7;
 
-  <!-- TITLE -->
 
-  <title>TWO® | COMING SOON.</title>
 
-  <!-- DESCRIPTION -->
+  /* LOGO */
 
-  <meta
-    name="description"
-    content="TWO® | COMING SOON."
-  />
+  --logo-width:340px;
 
-  <!-- FAVICON -->
+  --logo-max-width:80vw;
 
-  <link
-    rel="icon"
-    type="image/svg+xml"
-    href="assets/favicon.svg"
-  />
 
-  <!-- CSS -->
 
-  <link
-    rel="stylesheet"
-    href="style.css"
-  />
+  /* TEXT */
 
-</head>
+  --subtitle-size:22px;
 
-<body>
+  --subtitle-weight:400;
 
-  <main class="hero">
+  --subtitle-spacing:0.5px;
 
-    <div class="switch">
 
-      <!-- LOGO -->
 
-      <img
-        src="assets/logo.svg"
-        alt="two logo"
-        class="logo"
-      />
+  /* POSITION */
 
-      <!-- TEXT -->
+  --content-offset-y:-10px;
 
-      <p class="subtitle">
-        coming soon.
-      </p>
 
-    </div>
 
-  </main>
+  /* TIMING */
 
-</body>
+  --intro-fade:1.2s;
 
-</html>
+  --logo-visible-time:2.8s;
+
+  --fade-duration:0.8s;
+
+
+
+  /* BLUR */
+
+  --background-blur:0px;
+}
+
+
+
+/* =========================
+   RESET
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+
+
+/* =========================
+   BODY
+========================= */
+
+body{
+
+  width:100%;
+  height:100vh;
+
+  overflow:hidden;
+
+  background:var(--background-color);
+
+  font-family:
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  transform:
+    translateY(var(--content-offset-y));
+
+  filter:
+    blur(var(--background-blur));
+}
+
+
+
+/* =========================
+   SWITCH WRAPPER
+========================= */
+
+.switch{
+
+  position:relative;
+
+  width:var(--logo-width);
+
+  height:120px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+}
+
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+
+  position:absolute;
+
+  width:var(--logo-width);
+
+  max-width:var(--logo-max-width);
+
+  user-select:none;
+
+  -webkit-user-drag:none;
+
+  opacity:0;
+
+  animation:
+    logoSequence 4.8s ease forwards;
+}
+
+
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.subtitle{
+
+  position:absolute;
+
+  color:var(--text-color);
+
+  font-size:var(--subtitle-size);
+
+  font-weight:var(--subtitle-weight);
+
+  letter-spacing:var(--subtitle-spacing);
+
+  opacity:0;
+
+  animation:
+    textFade 0.8s ease forwards;
+
+  animation-delay:4s;
+}
+
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes logoSequence{
+
+  0%{
+    opacity:0;
+  }
+
+  25%{
+    opacity:1;
+  }
+
+  75%{
+    opacity:1;
+  }
+
+  100%{
+    opacity:0;
+  }
+}
+
+
+
+@keyframes textFade{
+
+  from{
+    opacity:0;
+  }
+
+  to{
+    opacity:1;
+  }
+}
