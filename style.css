@@ -20,8 +20,6 @@
 
   --logo-max-width:80vw;
 
-  --logo-opacity:1;
-
 
 
   /* TEXT */
@@ -41,6 +39,8 @@
 
 
   /* TIMING */
+
+  --intro-fade:1.2s;
 
   --logo-visible-time:2.8s;
 
@@ -146,18 +146,14 @@ body{
 
   max-width:var(--logo-max-width);
 
-  opacity:var(--logo-opacity);
-
   user-select:none;
 
   -webkit-user-drag:none;
 
-  animation:
-    logoFade var(--fade-duration)
-    ease forwards;
+  opacity:0;
 
-  animation-delay:
-    var(--logo-visible-time);
+  animation:
+    logoSequence 4.8s ease forwards;
 }
 
 
@@ -181,14 +177,9 @@ body{
   opacity:0;
 
   animation:
-    textFade var(--fade-duration)
-    ease forwards;
+    textFade 0.8s ease forwards;
 
-  animation-delay:
-    calc(
-      var(--logo-visible-time)
-      + var(--fade-duration)
-    );
+  animation-delay:4s;
 }
 
 
@@ -197,13 +188,21 @@ body{
    ANIMATIONS
 ========================= */
 
-@keyframes logoFade{
+@keyframes logoSequence{
 
-  from{
+  0%{
+    opacity:0;
+  }
+
+  25%{
     opacity:1;
   }
 
-  to{
+  75%{
+    opacity:1;
+  }
+
+  100%{
     opacity:0;
   }
 }
