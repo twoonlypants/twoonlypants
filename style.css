@@ -40,11 +40,11 @@
 
   /* TIMING */
 
-  --intro-fade:1.2s;
+  --intro-fade:3s;
 
-  --logo-visible-time:2.8s;
+  --logo-visible-time:6s;
 
-  --fade-duration:0.8s;
+  --fade-duration:9s;
 
 
 
